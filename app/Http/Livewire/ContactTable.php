@@ -88,7 +88,10 @@ final class ContactTable extends PowerGridComponent
             ->addColumn('phone')
             ->addColumn('operator_name', function (Contact $model) {
                 return $model->Operator ? $model->Operator->name : 'N/A';
-              });
+            })
+            ->addColumn('messages_count', function (Contact $model) {
+                return $model->messagesCount();
+            });
     }
 
     /*
@@ -121,6 +124,9 @@ final class ContactTable extends PowerGridComponent
                 ->searchable()
                 ->makeInputSelect(Operator::all(), 'name', 'operator_id', ['live-search' => true]),
 
+            Column::make('Messages', 'messages_count')
+                ->searchable()
+                ->sortable(),
         ];
     }
 
@@ -143,15 +149,15 @@ final class ContactTable extends PowerGridComponent
     {
         return [
             Button::make('show', 'View')
-                ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2.5 m-1 rounded text-sm')
+                ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
                 ->route('contact.show', ['contact' => 'id']),
 
             Button::make('edit', 'Edit')
-                ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2.5 m-1 rounded text-sm')
+                ->class('bg-indigo-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
                 ->route('contact.edit', ['contact' => 'id']),
 
             Button::make('destroy', 'Delete')
-                ->class('bg-red-500 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
+                ->class('bg-red-700 cursor-pointer text-white px-3 py-2 m-1 rounded text-sm')
                 ->route('contact.destroy', ['contact' => 'id'])
                 ->method('delete')
         ];

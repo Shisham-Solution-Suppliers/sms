@@ -36,4 +36,19 @@ class Contact extends Model
     {
         
     }
+
+    /**
+     * Get all of the Message for the Contact
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Message()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function messagesCount()
+    {
+        return($this->Message()->count());
+    }
 }

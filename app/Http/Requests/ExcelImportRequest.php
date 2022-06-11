@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreContactRequest extends FormRequest
+class ExcelImportRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -19,19 +19,12 @@ class StoreContactRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return array
      */
     public function rules()
     {
         return [
-            'phone' => 'required|unique:contacts|numeric',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'phone.unique' => 'Duplicate Entry!',
+            'file'=> 'required|mimes:xlsx, csv, xls',
         ];
     }
 }

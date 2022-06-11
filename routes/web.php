@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OperatorController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,11 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('contacts.create');
     })->name('dashboard');
     Route::resource('operator', OperatorController::class);
     Route::resource('contact', ContactController::class);
+    Route::post('/import', [ContactController::class, 'import'])->name('import');
+    Route::resource('message', MessageController::class)->only('index', 'create', 'store');
     Route::get('remap', [ContactController::class, 'remap'])->name('remap');
 });

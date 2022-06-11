@@ -78,4 +78,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Contact::class);
     }
+
+    /**
+     * Get all of the Message for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function Message()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

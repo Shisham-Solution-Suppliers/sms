@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExcelImportRequest;
 use App\Http\Requests\StoreContactRequest;
 use App\Http\Requests\UpdateContactRequest;
+use App\Imports\ContactsImport;
 use App\Models\Contact;
 use App\Models\OperatorDetail;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ContactController extends Controller
 {
@@ -42,7 +45,7 @@ class ContactController extends Controller
 
         auth()->user()->Contact()->create($data);
 
-        return redirect()->route('contact.index')->with('toast_success', 'Contact Created Sucessfully!');
+        return redirect()->route('contact.create')->with('toast_success', 'Contact Created Sucessfully!');
     }
 
     /**
@@ -53,7 +56,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        $contact->load('Operator');
+        $contact->load('Operator', 'Message');
         return view('contacts.show', compact('contact'));
     }
 
@@ -120,5 +123,14 @@ class ContactController extends Controller
             }
         }
         return $operator_id;
+    }
+
+    public function import(ExcelImportRequest $request)
+    {
+        $file = $request->validated()['file'];
+
+        Excel::import(new ContactsImport(), $file);
+
+        return redirect()->route('contact.index')->with('toast_success', 'Contacts Imported Sucessfully!');
     }
 }

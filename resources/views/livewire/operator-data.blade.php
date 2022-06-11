@@ -1,5 +1,5 @@
 <div>
-    <table class="border-collapse mt-4 shadow-sm">
+    <table class="border-collapse mt-4 shadow-sm w-full">
         <thead>
             <tr class="text-sm bg-blue-600 text-white p-4">
                 <th class="p-3">S.N.</th>

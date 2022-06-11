@@ -1,11 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Operators') }}
-        </h2>
-        <x-jet-nav-link href="{{ route('operator.create') }}">
-            {{ __('Add a new Operator') }}
-        </x-jet-nav-link>
+        <div class="flex justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Operators') }}
+            </h2>
+            <x-jet-nav-link href="{{ route('operator.create') }}">
+                {{ __('Add a new Operator') }}
+            </x-jet-nav-link>
+        </div>
     </x-slot>
 
     <div class="py-12">
