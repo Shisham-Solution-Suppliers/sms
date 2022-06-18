@@ -424,8 +424,7 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 mt-10">
-                <img src="https://scontent.fktm8-1.fna.fbcdn.net/v/t1.18169-9/12804828_177719979277136_4145234296869629832_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=tqdrmVEWKowAX9pScBe&_nc_ht=scontent.fktm8-1.fna&oh=00_AT_b8x-T3JOt1bsA3mDx5fsTfP3UWQ_Bl1YJVGS21w9Zkw&oe=62CB87DC"
-                    alt="logo">
+                <h2>Motherland Computers</h2>
             </div>
 
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
