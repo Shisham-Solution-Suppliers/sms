@@ -10,8 +10,8 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
                     <div class="px-4 py-5 sm:px-6">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">Add Contact Information.</h3>
-                        <p class="mt-1 max-w-2xl text-sm text-gray-500">Add information below.</p>
+                        <h3 class="text-lg leading-6 font-medium text-gray-900"></h3>
+                        <p class="mt-1 max-w-2xl text-sm text-gray-500"></p>
                     </div>
 
                     <div class="border-t border-gray-200">
@@ -28,7 +28,7 @@
                             @csrf
                             <dl>
                                 <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500">Contact Number</dt>
+                                    <dt class="text-sm font-medium text-gray-500">Type Mobile Number</dt>
                                     <input
                                         class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded sm:text-sm border-gray-300"
                                         type="number" name="phone" id="phone">

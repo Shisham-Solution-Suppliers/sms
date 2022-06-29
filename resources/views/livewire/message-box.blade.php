@@ -11,7 +11,7 @@
             <select
                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded sm:text-sm border-gray-300"
                 id="operator" wire:model="operator">
-                <option>---Select an Operator---</option>
+                <option>---Ncell/NTC/SmartCell---</option>
                 @foreach ($operators as $operator)
                 <option value="{{$operator->id}}">{{$operator->name}}</option>
                 @endforeach
