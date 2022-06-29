@@ -21,7 +21,7 @@ class MessageBox extends Component
 
     public function mount()
     {
-        $this->operators = auth()->user()->Operaptor;
+        $this->operators = auth()->user()->Operator;
         $this->charCount = 0;
         $this->batch_numnber = 0;
     }
