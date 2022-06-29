@@ -52,7 +52,7 @@ final class ContactTable extends PowerGridComponent
      */
     public function datasource(): Builder
     {
-        return Contact::query()->with('operator');
+        return Contact::query()->with('operator')->where('user_id', auth()->user()->id);
     }
 
     /*

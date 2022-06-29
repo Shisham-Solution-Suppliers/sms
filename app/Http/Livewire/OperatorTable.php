@@ -51,7 +51,7 @@ final class OperatorTable extends PowerGridComponent
     */
     public function datasource(): Builder
     {
-        return Operator::query();
+        return Operator::query()->where('user_id', auth()->user()->id);
     }
 
     /*
