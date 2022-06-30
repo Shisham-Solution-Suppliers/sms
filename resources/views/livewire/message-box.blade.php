@@ -1,7 +1,7 @@
 <div>
     <dl>
         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-            <dt class="text-sm font-medium text-gray-500">Message {{$charCount}}/160</dt>
+            <dt class="text-sm font-medium text-gray-500">Message {{$charCount}}/250</dt>
             <textarea
                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded sm:text-sm border-gray-300"
                 name="message" id="message" rows="13" wire:model="message" value="{{ old('message')}}"></textarea>
