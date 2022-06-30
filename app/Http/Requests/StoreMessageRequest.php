@@ -26,6 +26,7 @@ class StoreMessageRequest extends FormRequest
         return [
             'phone' => 'required|array',
             'message' => 'required|string|max:250',
+            'copy' => 'sometimes',
         ];
     }
 }
