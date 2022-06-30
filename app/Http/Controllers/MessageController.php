@@ -48,12 +48,12 @@ class MessageController extends Controller
         }
         $phone_numbers = implode(",", $nums);
         
-        if (isset($data['copy']) && $data['copy'] === "on") {
-            return view('message.show', compact('phone_numbers'));
-        }
+        // if (isset($data['copy']) && $data['copy'] === "on") {
+        //     return view('message.show', compact('phone_numbers'));
+        // }
 
         $url = "sms:" . $phone_numbers . "?&body=" . rawurlencode($data['message']);
-        dd($url);
+        // dd($url);
         return redirect($url)->with('toast_success', 'Message Sent Sucessfully!');
     }
 }
