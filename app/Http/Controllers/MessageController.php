@@ -49,7 +49,7 @@ class MessageController extends Controller
         $phone_numbers = implode(",", $nums);
         $url = "sms:" . $phone_numbers . "?&body=" . rawurlencode($data['message']);
 
-        if ($data['copy'] === "on") {
+        if (isset($data['copy']) && $data['copy'] === "on") {
             return view('message.show', compact('phone_numbers'));
         }
 
