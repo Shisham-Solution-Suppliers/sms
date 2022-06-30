@@ -24,7 +24,7 @@ class StoreContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'phone' => 'required|unique:contacts|numeric',
+            'phone' => 'required|unique:contacts|numeric|digits:10',
         ];
     }
 
