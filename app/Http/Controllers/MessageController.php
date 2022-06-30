@@ -47,12 +47,12 @@ class MessageController extends Controller
             array_push($nums, Contact::find($phone)->phone);
         }
         $phone_numbers = implode(",", $nums);
-        $url = "sms:" . $phone_numbers . "?&body=" . rawurlencode($data['message']);
-
+        
         if (isset($data['copy']) && $data['copy'] === "on") {
             return view('message.show', compact('phone_numbers'));
         }
-
+        
+        $url = "sms:" . $phone_numbers . "?&body=" . rawurlencode($data['message']);
         return redirect($url)->with('toast_success', 'Message Sent Sucessfully!');
     }
 }
