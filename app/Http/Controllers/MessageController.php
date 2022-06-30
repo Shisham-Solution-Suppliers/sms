@@ -52,7 +52,7 @@ class MessageController extends Controller
             return view('message.show', compact('phone_numbers'));
         }
 
-        $url = "sms:" . $phone_numbers . "?&body=" . rawurlencode($data['message']);
+        $url = "sms:".$phone_numbers."?&body=" . rawurlencode($data['message']);
         return redirect($url)->with('toast_success', 'Message Sent Sucessfully!');
     }
 }
